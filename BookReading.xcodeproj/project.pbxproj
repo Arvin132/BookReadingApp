@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		423A1B63297C87B6008DA7A0 /* DisscussView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423A1B62297C87B6008DA7A0 /* DisscussView.swift */; };
+		423A1B68297C8BBE008DA7A0 /* GoogleBooksConnection Serice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423A1B67297C8BBE008DA7A0 /* GoogleBooksConnection Serice.swift */; };
+		423A1B73297C9450008DA7A0 /* Volume.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423A1B72297C9450008DA7A0 /* Volume.swift */; };
+		423A1B76297DD4BA008DA7A0 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 423A1B75297DD4BA008DA7A0 /* SDWebImageSwiftUI */; };
+		423A1B79297DD4D4008DA7A0 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 423A1B78297DD4D4008DA7A0 /* SwiftyJSON */; };
+		423A1B80297DF761008DA7A0 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423A1B7F297DF761008DA7A0 /* TabBarView.swift */; };
+		423A1B82297DF82E008DA7A0 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423A1B81297DF82E008DA7A0 /* SearchBarView.swift */; };
 		42BD9F4129750141003DE7E0 /* BookReadingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BD9F4029750141003DE7E0 /* BookReadingApp.swift */; };
 		42BD9F4329750141003DE7E0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BD9F4229750141003DE7E0 /* ContentView.swift */; };
 		42BD9F4529750142003DE7E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42BD9F4429750142003DE7E0 /* Assets.xcassets */; };
@@ -37,6 +44,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		423A1B62297C87B6008DA7A0 /* DisscussView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisscussView.swift; sourceTree = "<group>"; };
+		423A1B67297C8BBE008DA7A0 /* GoogleBooksConnection Serice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GoogleBooksConnection Serice.swift"; sourceTree = "<group>"; };
+		423A1B72297C9450008DA7A0 /* Volume.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Volume.swift; sourceTree = "<group>"; };
+		423A1B7A297DE16F008DA7A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		423A1B7F297DF761008DA7A0 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		423A1B81297DF82E008DA7A0 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		42BD9F3D29750141003DE7E0 /* BookReading.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookReading.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42BD9F4029750141003DE7E0 /* BookReadingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookReadingApp.swift; sourceTree = "<group>"; };
 		42BD9F4229750141003DE7E0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -57,6 +70,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				423A1B79297DD4D4008DA7A0 /* SwiftyJSON in Frameworks */,
+				423A1B76297DD4BA008DA7A0 /* SDWebImageSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +92,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		423A1B71297C9433008DA7A0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				423A1B72297C9450008DA7A0 /* Volume.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		423A1B7B297DF340008DA7A0 /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				42BD9F7129750742003DE7E0 /* SheetManager.swift */,
+				423A1B67297C8BBE008DA7A0 /* GoogleBooksConnection Serice.swift */,
+			);
+			path = viewModel;
+			sourceTree = "<group>";
+		};
+		423A1B7C297DF350008DA7A0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				42BD9F4229750141003DE7E0 /* ContentView.swift */,
+				42BD9F6A29750539003DE7E0 /* LibraryView.swift */,
+				42BD9F6F2975059F003DE7E0 /* SettingView.swift */,
+				42BD9F6C2975056D003DE7E0 /* SearchView.swift */,
+				423A1B81297DF82E008DA7A0 /* SearchBarView.swift */,
+				423A1B62297C87B6008DA7A0 /* DisscussView.swift */,
+				423A1B7F297DF761008DA7A0 /* TabBarView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		42BD9F3429750141003DE7E0 = {
 			isa = PBXGroup;
 			children = (
@@ -100,12 +146,11 @@
 		42BD9F3F29750141003DE7E0 /* BookReading */ = {
 			isa = PBXGroup;
 			children = (
+				423A1B7A297DE16F008DA7A0 /* Info.plist */,
+				423A1B7C297DF350008DA7A0 /* View */,
+				423A1B7B297DF340008DA7A0 /* viewModel */,
+				423A1B71297C9433008DA7A0 /* Model */,
 				42BD9F4029750141003DE7E0 /* BookReadingApp.swift */,
-				42BD9F4229750141003DE7E0 /* ContentView.swift */,
-				42BD9F6A29750539003DE7E0 /* LibraryView.swift */,
-				42BD9F6C2975056D003DE7E0 /* SearchView.swift */,
-				42BD9F6F2975059F003DE7E0 /* SettingView.swift */,
-				42BD9F7129750742003DE7E0 /* SheetManager.swift */,
 				42BD9F4629750142003DE7E0 /* Preview Content */,
 			);
 			path = BookReading;
@@ -152,6 +197,10 @@
 			dependencies = (
 			);
 			name = BookReading;
+			packageProductDependencies = (
+				423A1B75297DD4BA008DA7A0 /* SDWebImageSwiftUI */,
+				423A1B78297DD4D4008DA7A0 /* SwiftyJSON */,
+			);
 			productName = BookReading;
 			productReference = 42BD9F3D29750141003DE7E0 /* BookReading.app */;
 			productType = "com.apple.product-type.application";
@@ -224,6 +273,10 @@
 				Base,
 			);
 			mainGroup = 42BD9F3429750141003DE7E0;
+			packageReferences = (
+				423A1B74297DD4BA008DA7A0 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+				423A1B77297DD4D4008DA7A0 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+			);
 			productRefGroup = 42BD9F3E29750141003DE7E0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -269,9 +322,14 @@
 				42BD9F6D2975056D003DE7E0 /* SearchView.swift in Sources */,
 				42BD9F7229750742003DE7E0 /* SheetManager.swift in Sources */,
 				42BD9F4329750141003DE7E0 /* ContentView.swift in Sources */,
+				423A1B63297C87B6008DA7A0 /* DisscussView.swift in Sources */,
+				423A1B73297C9450008DA7A0 /* Volume.swift in Sources */,
 				42BD9F702975059F003DE7E0 /* SettingView.swift in Sources */,
 				42BD9F6B29750539003DE7E0 /* LibraryView.swift in Sources */,
+				423A1B82297DF82E008DA7A0 /* SearchBarView.swift in Sources */,
 				42BD9F4129750141003DE7E0 /* BookReadingApp.swift in Sources */,
+				423A1B80297DF761008DA7A0 /* TabBarView.swift in Sources */,
+				423A1B68297C8BBE008DA7A0 /* GoogleBooksConnection Serice.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,6 +489,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"BookReading/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BookReading/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -459,6 +518,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"BookReading/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BookReading/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -589,6 +649,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		423A1B74297DD4BA008DA7A0 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+		423A1B77297DD4D4008DA7A0 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		423A1B75297DD4BA008DA7A0 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 423A1B74297DD4BA008DA7A0 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+		423A1B78297DD4D4008DA7A0 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 423A1B77297DD4D4008DA7A0 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 42BD9F3529750141003DE7E0 /* Project object */;
 }

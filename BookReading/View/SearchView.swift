@@ -16,20 +16,24 @@ struct SearchView: View {
     var body: some View {
         VStack {
             List(viewModel.data) {book in
-                HStack {
-                    WebImage(url: URL(string: book.imurl))
-                        .resizable()
-                        .frame(width:120, height: 170)
-                        .cornerRadius(10)
+                Button {
                     
-                    VStack(alignment: .leading, spacing: 10) {
-                        Text(book.title)
-                            .fontWeight(.bold)
-                        Text(book.authors)
-                        Text(book.desc)
-                            .font(.caption)
-                            .lineLimit(4)
-                            .multilineTextAlignment(.leading)
+                } label: {
+                    HStack {
+                        WebImage(url: URL(string: book.imurl))
+                            .resizable()
+                            .frame(width:120, height: 170)
+                            .cornerRadius(10)
+                        
+                        VStack(alignment: .leading, spacing: 10) {
+                            Text(book.title)
+                                .fontWeight(.bold)
+                            Text(book.authors)
+                            Text(book.desc)
+                                .font(.caption)
+                                .lineLimit(4)
+                                .multilineTextAlignment(.leading)
+                        }
                     }
                 }
             }

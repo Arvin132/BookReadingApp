@@ -12,7 +12,7 @@ import SwiftUI
 struct ContentView: View {
     @StateObject var sheetManager = SheetManager()
     @State var selected = 0
-    
+    @State var showBookDetailed = true
     let tabBarItems =
     [
     TabItemData(image: "book.closed", selectedImage: "book", title: "My Books"),
@@ -23,12 +23,16 @@ struct ContentView: View {
     var body: some View {
         
         VStack {
-            if(selected == 0) {
-                LibraryView()
-            } else if (selected == 1) {
-                SearchView()
-            } else if (selected == 2){
-                DisscussView()
+            if (!showBookDetailed) {
+                if(selected == 0) {
+                    LibraryView()
+                } else if (selected == 1) {
+                    SearchView()
+                } else if (selected == 2){
+                    DisscussView()
+                }
+            } else {
+                BookDetailedView()
             }
         }
         .frame(width: UIScreen.main.bounds.width,

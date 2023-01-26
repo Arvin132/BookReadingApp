@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1714233B29830E9200C539B0 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1714233A29830E9200C539B0 /* SignInView.swift */; };
+		1714233D2983187F00C539B0 /* FireBaseAuthenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1714233C2983187F00C539B0 /* FireBaseAuthenticator.swift */; };
 		423A1B63297C87B6008DA7A0 /* DisscussView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423A1B62297C87B6008DA7A0 /* DisscussView.swift */; };
 		423A1B68297C8BBE008DA7A0 /* GoogleBooksConnection Serice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423A1B67297C8BBE008DA7A0 /* GoogleBooksConnection Serice.swift */; };
 		423A1B73297C9450008DA7A0 /* Volume.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423A1B72297C9450008DA7A0 /* Volume.swift */; };
@@ -53,6 +55,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1714233A29830E9200C539B0 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		1714233C2983187F00C539B0 /* FireBaseAuthenticator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireBaseAuthenticator.swift; sourceTree = "<group>"; };
 		423A1B62297C87B6008DA7A0 /* DisscussView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisscussView.swift; sourceTree = "<group>"; };
 		423A1B67297C8BBE008DA7A0 /* GoogleBooksConnection Serice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GoogleBooksConnection Serice.swift"; sourceTree = "<group>"; };
 		423A1B72297C9450008DA7A0 /* Volume.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Volume.swift; sourceTree = "<group>"; };
@@ -124,6 +128,7 @@
 				42BD9F7129750742003DE7E0 /* SheetManager.swift */,
 				423A1B67297C8BBE008DA7A0 /* GoogleBooksConnection Serice.swift */,
 				423A1B92297F8549008DA7A0 /* AppDelegate.swift */,
+				1714233C2983187F00C539B0 /* FireBaseAuthenticator.swift */,
 			);
 			path = viewModel;
 			sourceTree = "<group>";
@@ -139,6 +144,7 @@
 				423A1B62297C87B6008DA7A0 /* DisscussView.swift */,
 				423A1B7F297DF761008DA7A0 /* TabBarView.swift */,
 				423A1B94297F8B0F008DA7A0 /* BookDetailedView.swift */,
+				1714233A29830E9200C539B0 /* SignInView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -350,12 +356,14 @@
 			files = (
 				423A1B93297F8549008DA7A0 /* AppDelegate.swift in Sources */,
 				42BD9F6D2975056D003DE7E0 /* SearchView.swift in Sources */,
+				1714233D2983187F00C539B0 /* FireBaseAuthenticator.swift in Sources */,
 				42BD9F7229750742003DE7E0 /* SheetManager.swift in Sources */,
 				423A1B95297F8B0F008DA7A0 /* BookDetailedView.swift in Sources */,
 				42BD9F4329750141003DE7E0 /* ContentView.swift in Sources */,
 				423A1B63297C87B6008DA7A0 /* DisscussView.swift in Sources */,
 				423A1B73297C9450008DA7A0 /* Volume.swift in Sources */,
 				42BD9F702975059F003DE7E0 /* SettingView.swift in Sources */,
+				1714233B29830E9200C539B0 /* SignInView.swift in Sources */,
 				42BD9F6B29750539003DE7E0 /* LibraryView.swift in Sources */,
 				423A1B82297DF82E008DA7A0 /* SearchBarView.swift in Sources */,
 				42BD9F4129750141003DE7E0 /* BookReadingApp.swift in Sources */,
@@ -446,7 +454,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -500,7 +508,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

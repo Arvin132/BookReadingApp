@@ -8,7 +8,6 @@
 import Foundation
 
 struct Book: Identifiable {
-    
     var id: String
     var title: String
     var authors: String

@@ -12,7 +12,7 @@ import SwiftUI
 struct ContentView: View {
     @StateObject var sheetManager = SheetManager()
     @State var selected = 0
-    @State var haveLogined = false
+    @State var hasSignedin = false
     let tabBarItems =
     [
     TabItemData(image: "book.closed", selectedImage: "book", title: "My Books"),
@@ -22,7 +22,7 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            if (haveLogined) {
+            if (hasSignedin) {
                 if(selected == 0) {
                     LibraryView()
                 } else if (selected == 1) {
@@ -31,18 +31,18 @@ struct ContentView: View {
                     DisscussView()
                 }
             } else {
-                SignInView()
+                SignInView(hasSignedin: $hasSignedin)
             }
         }
         .frame(width: UIScreen.main.bounds.width,
                height: UIScreen.main.bounds.height * 0.9)
         .overlay(alignment: .bottom, content: {
-            if (haveLogined) {
+            if (hasSignedin) {
                 TabBottomView(tabbarItems: tabBarItems, selectedIndex: $selected)
             }
         })
         .overlay(alignment: .topLeading, content: {
-            if (selected == 0 && haveLogined) {
+            if (selected == 0 && hasSignedin) {
                 Button {
                     
                 } label: {

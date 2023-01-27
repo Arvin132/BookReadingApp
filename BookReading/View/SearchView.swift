@@ -40,7 +40,6 @@ struct SearchView: View {
         }
         .overlay(alignment: .top) {
             HStack {
-                
                 TextField("Search...", text: $searchText) {
                     viewModel.data = []
                     viewModel.searchForName(given: searchText)

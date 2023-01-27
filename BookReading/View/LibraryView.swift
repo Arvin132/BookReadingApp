@@ -10,6 +10,8 @@ import SwiftUI
 struct LibraryView: View {
     var body: some View {
         Text("This is Library")
+            .transition(.move(edge: .leading))
+            .animation(.default)
     }
 }
 

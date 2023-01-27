@@ -11,6 +11,11 @@ import FirebaseAuth
 
 class FireBaseAuthenticator {
     
+    static func checkIfCurrentUserIsSignedIn() -> Bool {
+        return (Auth.auth().currentUser != nil)
+    }
+    
+    
     static func createUser(email: String, password: String, completion: @escaping (Error?, AuthDataResult?) -> Void) {
         Auth.auth().createUser(withEmail: email, password: password) { result, err in
             if (err != nil || result == nil) {
@@ -25,7 +30,6 @@ class FireBaseAuthenticator {
             }
         }
     }
-    
     
     
     static func loginWithUser(email: String, password: String, completion: @escaping (Error?, AuthDataResult?) -> Void) {

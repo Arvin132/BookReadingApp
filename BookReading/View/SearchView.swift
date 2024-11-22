@@ -39,34 +39,7 @@ struct SearchView: View {
             }
         }
         .overlay(alignment: .top) {
-            HStack {
-                TextField("Search...", text: $searchText) {
-                    viewModel.data = []
-                    viewModel.searchForName(given: searchText)
-                }
-                .keyboardType(.webSearch)
-                .padding(7)
-                .padding(.horizontal, 25)
-                .background(Color(.systemGray4))
-                .cornerRadius(8)
-                .padding(.horizontal, 10)
-                .onTapGesture {
-                    self.isEditing = true
-                }
-                .overlay(alignment: .trailing) {
-                    if isEditing {
-                        Button {
-                            self.isEditing = false
-                            self.searchText = ""
-                        } label: {
-                            Text("Cancel")
-                        }
-                        .padding(.trailing, 15)
-                        .transition(.move(edge: .trailing))
-                        .animation(.default)
-                    }
-                }
-            }
+            SearchBarView(text: $searchText)
         }
     }
 }

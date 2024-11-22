@@ -8,29 +8,35 @@
 import SwiftUI
 
 struct SignInView: View {
-    @Binding var hasSignedin: Bool
     @State var wantsToSignUp: Bool = false
     
     var body: some View {
+        
         if (!wantsToSignUp) {
-            SignInMainView(wantsToSignUp: $wantsToSignUp, hasSignedin: $hasSignedin)
-                .transition(.move(edge: .trailing))
-                .animation(.default)
+            withAnimation(.easeInOut(duration: 0.35)) {
+                SignInMainView(wantsToSignUp: $wantsToSignUp)
+                    .frame(width: UIScreen.main.bounds.width,
+                           height: UIScreen.main.bounds.height * 0.9)
+                    .transition(.move(edge: .trailing))
+            }
         } else {
-            SignUpView(wantsToSignUp: $wantsToSignUp)
-                .transition(.move(edge: .trailing))
-                .animation(.default)
+            withAnimation(.easeInOut(duration: 0.35)) {
+                SignUpView(wantsToSignUp: $wantsToSignUp)
+                    .frame(width: UIScreen.main.bounds.width,
+                           height: UIScreen.main.bounds.height * 0.9)
+                    .transition(.move(edge: .trailing))
+            }
         }
     }
 }
 
 struct SignInMainView: View {
     @Binding var wantsToSignUp: Bool
-    @Binding var hasSignedin: Bool
     @State var rememberMeVar = false
     @State var errorInLogin = false
     @State private var username: String = ""
     @State private var password: String = ""
+    @EnvironmentObject var curUser: CurrentUser
     
     
     var body: some View {
@@ -62,7 +68,9 @@ struct SignInMainView: View {
                         password = ""
                         errorInLogin = true
                     } else {
-                        hasSignedin = true
+                        curUser.uid = result?.user.uid
+                        curUser.username = result?.user.email ?? " "
+                        curUser.isLoggedIn = true
                     }
                 }
             } label: {

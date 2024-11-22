@@ -8,10 +8,13 @@
 import SwiftUI
 
 struct LibraryView: View {
+    @EnvironmentObject var curUser: CurrentUser
     var body: some View {
-        Text("This is Library")
-            .transition(.move(edge: .leading))
-            .animation(.default)
+        withAnimation(.easeInOut(duration: 0.35)) {
+            Text("This is Library of User with uid: \(String(describing: curUser.uid)) and username(email) of \(String(describing: curUser.username))")
+                .transition(.move(edge: .leading))
+                
+        }
     }
 }
 

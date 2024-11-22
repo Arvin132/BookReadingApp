@@ -28,15 +28,17 @@ struct SearchBarView: View {
             }
             .overlay(alignment: .trailing) {
                 if isEditing {
-                    Button {
-                        self.isEditing = false
-                        self.text = ""
-                    } label: {
-                        Text("Cancel")
+                    withAnimation {
+                        Button {
+                            self.isEditing = false
+                            self.text = ""
+                        } label: {
+                            Text("Cancel")
+                        }
+                        .padding(.trailing, 15)
+                        .transition(.move(edge: .trailing))
+                        
                     }
-                    .padding(.trailing, 15)
-                    .transition(.move(edge: .trailing))
-                    .animation(.default)
                 }
             }
         }

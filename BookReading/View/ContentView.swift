@@ -7,58 +7,63 @@
 
 import SwiftUI
 
-
-
 struct ContentView: View {
-    @StateObject var sheetManager = SheetManager()
+    @EnvironmentObject var curUser: CurrentUser
     @State var selected = 0
-    @State var hasSignedin = false
     let tabBarItems =
     [
-    TabItemData(image: "book.closed", selectedImage: "book", title: "My Books"),
-    TabItemData(image: "magnifyingglass.circle", selectedImage: "magnifyingglass.circle.fill", title: "Search"),
-    TabItemData(image: "message", selectedImage: "message.fill", title: "Disscuss")
+        TabItemData(image: "book.closed", selectedImage: "book", title: "My Books"),
+        TabItemData(image: "magnifyingglass.circle", selectedImage: "magnifyingglass.circle.fill", title: "Search"),
+        TabItemData(image: "message", selectedImage: "message.fill", title: "Disscuss")
+    ]
+    
+    let ContentViewPages: [Int: AnyView] =
+    [
+        0: AnyView(LibraryView()),
+        1: AnyView(SearchView()),
+        2: AnyView(DisscussView())
     ]
     
     var body: some View {
-        VStack {
-            if (hasSignedin) {
-                if(selected == 0) {
-                    LibraryView()
-                } else if (selected == 1) {
-                    SearchView()
-                } else if (selected == 2){
-                    DisscussView()
+        NavigationView{
+            VStack {
+                if (curUser.isLoggedIn) {
+                    ContentViewPages[selected]
+                        .frame(width: UIScreen.main.bounds.width,
+                               height: UIScreen.main.bounds.height * 0.9)
+                        .overlay(alignment: .bottom, content: {
+                            TabBottomView(tabbarItems: tabBarItems, selectedIndex: $selected)
+                        })
+                        .overlay(alignment: .topLeading, content: {
+                            if (selected == 0) {
+                                ProfileIcon()
+                            }
+                        })
+                } else {
+                    SignInView()
                 }
-            } else {
-                SignInView(hasSignedin: $hasSignedin)
+            }
+            .onAppear {
+                curUser.isLoggedIn = FireBaseAuthenticator.checkIfCurrentUserIsSignedIn()
+                if (curUser.isLoggedIn) {
+                    let (uid, email) = FireBaseAuthenticator.getCurrentUser()
+                    curUser.uid = uid
+                    curUser.username = email
+                }
             }
         }
-        .frame(width: UIScreen.main.bounds.width,
-               height: UIScreen.main.bounds.height * 0.9)
-        .overlay(alignment: .bottom, content: {
-            if (hasSignedin) {
-                TabBottomView(tabbarItems: tabBarItems, selectedIndex: $selected)
-            }
-        })
-        .overlay(alignment: .topLeading, content: {
-            if (selected == 0 && hasSignedin) {
-                Button {
-                    
-                } label: {
-                    Image(sheetManager.profileP)
-                        .resizable()
-                        .frame(width: 50, height: 50)
-                        .clipShape(Circle())
-                }
-                .padding()
-            }
-        })
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
+struct ProfileIcon: View {
+    @EnvironmentObject var curUser: CurrentUser
+    var body: some View {
+        NavigationLink(destination: ProfileDetailedView()) {
+            Image(curUser.profileP)
+                .resizable()
+                .frame(width: 50, height: 50)
+                .clipShape(Circle())
+        }
+        .padding()
     }
 }

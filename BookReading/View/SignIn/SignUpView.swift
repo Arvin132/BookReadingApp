@@ -31,7 +31,9 @@ struct SignUpView: View {
         VStack {
             HStack {
                 Button {
-                    wantsToSignUp = false
+                    withAnimation {
+                        wantsToSignUp = false
+                    }
                 } label: {
                     Text("< Go Back")
                         .padding(5)
@@ -65,7 +67,9 @@ struct SignUpView: View {
                         if (err == nil) {
                             showAlert = true
                         } else {
-                            wantsToSignUp = false
+                            withAnimation {
+                                wantsToSignUp = false
+                            }
                         }
                     }
                 } else {

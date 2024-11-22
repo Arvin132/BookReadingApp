@@ -9,10 +9,12 @@ import SwiftUI
 
 @main
 struct BookReadingApp: App {
-    @UIApplicationDelegateAdaptor (AppDelegate.self) var delegate
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    @StateObject private var curUser = CurrentUser()
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(curUser)
         }
     }
 }

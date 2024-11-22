@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DisscussView: View {
     var body: some View {
-        Text("This is Disscuss View")
+        Text("This is Disscuss New View")
     }
 }
 

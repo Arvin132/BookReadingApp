@@ -41,16 +41,13 @@ struct TabBottomView: View {
     var body : some View {
         HStack {
             Spacer()
-            
-            ForEach(tabbarItems.indices) { i in
+            ForEach(tabbarItems.indices, id: \.self) { i in
                 let item = tabbarItems[i]
                 Button {
                     self.selectedIndex = i
                 } label: {
-                    let isSelected = selectedIndex == i
-                    TabItemView(info: item, isSelected: isSelected)
+                    TabItemView(info: item, isSelected: selectedIndex == i)
                 }
-                
                 Spacer()
             }
         }
